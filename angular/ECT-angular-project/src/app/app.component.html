@@ -1,0 +1,37 @@
+<!-- Sort by name (ascending) -->
+<h3>Sorted by ascending name:</h3>
+<div *ngFor="let item of options | customSort: ['name']">
+  {{ item.name }} - {{ item.price }} - {{ item.date | date: 'mediumDate' }}
+</div>
+
+<!-- Sort by date (ascending) -->
+<h3>Sorted by ascending date:</h3>
+<div *ngFor="let item of options | customSort: 'date'">
+  {{ item.name }} - {{ item.price }} - {{ item.date | date: 'mediumDate' }}
+</div>
+
+<!-- Sort by price (descending) -->
+<h3>Sorted by descending price:</h3>
+<div *ngFor="let item of options | customSort: '-price'">
+  {{ item.name }} - {{ item.price }} - {{ item.date | date: 'mediumDate' }}
+</div>
+
+<!-- Sort by name (ascending) and price (descending) -->
+<h3>Sorted by ascending name and descending price:</h3>
+<div *ngFor="let item of options | customSort: ['name', '-price']">
+  {{ item.name }} - {{ item.price }} - {{ item.date | date: 'mediumDate' }}
+</div>
+
+<!-- Sort by date (descending) -->
+<h3>Sorted by descending date:</h3>
+<div *ngFor="let item of options | customSort: '-date'">
+  {{ item.name }} - {{ item.price }} - {{ item.date | date: 'mediumDate' }}
+</div>
+
+<!-- Repeater Component: Show items -->
+<h3>Repeater Component:</h3>
+<app-repeater [option]="data" [templateRef]="itemTemplate">
+  <ng-template #itemTemplate let-item>
+    <div>{{ item.name }}</div>
+  </ng-template>
+</app-repeater>
