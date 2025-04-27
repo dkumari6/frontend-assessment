@@ -68,6 +68,7 @@ This component repeats the enclosed template based on the number of elements in 
 
 ### Run using ng serve
 ```bash
+cd angular/ECT-angular-project
 npm install
 ng serve -o
 ```
